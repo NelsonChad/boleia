@@ -1,5 +1,6 @@
 import 'package:boleia_app/ui/views/components/app_drawer.dart';
 import 'package:boleia_app/ui/views/home/recent_section.dart';
+import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,11 +10,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        backgroundColor: Colors.blue,
+        title: const Text(
+          "Home",
+          style: TextStyle(color: Colors.white),
+        ),
         leading: Builder(
           builder: (context) => // Ensure Scaffold is in context
               IconButton(
-                  icon: Icon(Icons.menu),
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.white,
+                  ),
                   onPressed: () => Scaffold.of(context).openDrawer()),
         ),
       ),
@@ -21,22 +29,24 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 30),
-          ElevatedButton(
-            style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(const Size(200.0, 70.0)),
-              maximumSize: MaterialStateProperty.all(const Size(200.0, 70.0)),
-            ),
-            onPressed: () {},
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(Icons.hail_rounded),
-                Text('Pedir Bolaia'),
-              ],
+          SizedBox(
+            width: 250,
+            child: AppButton(
+              borderColor: Colors.grey,
+              color: Colors.white,
+              fcolor: Colors.grey,
+              icon: Icons.hail_rounded,
+              hasIcon: true,
+              label: "Pedir boleia         ",
+              height: 60.0,
+              width: double.infinity,
+              onPressed: () {
+                //navegateReplaceTo(context, const HomePage());
+              },
             ),
           ),
           const SizedBox(height: 30),
-          RecentSection()
+          const RecentSection()
         ],
       ),
     );

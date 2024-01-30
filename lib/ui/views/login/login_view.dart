@@ -1,4 +1,5 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
+import 'package:boleia_app/ui/views/passager_signup/signup_page.dart';
 import 'package:boleia_app/ui/views/start/start_page.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:boleia_app/ui/widgets/formfield.dart';
@@ -16,7 +17,7 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                const SizedBox(height: 100),
+                const SizedBox(height: 80),
                 const Text(
                   "Login",
                   style: TextStyle(
@@ -95,6 +96,28 @@ class LoginPage extends StatelessWidget {
                     },
                   ),
                 ),
+                const SizedBox(height: 10),
+                SizedBox(
+                  width: double.infinity,
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Ainda nao possue uma conta? "),
+                        InkWell(
+                          child: const Text(
+                            "Crie uma!",
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                          onTap: () {
+                            navegateTo(context, const SignupPage());
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),

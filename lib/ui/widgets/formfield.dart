@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:boleia_app/ui/widgets/dropdown.dart';
 import 'package:flutter/material.dart';
 
 class Formfield extends StatefulWidget {
@@ -8,7 +9,7 @@ class Formfield extends StatefulWidget {
   final String hintText;
   final String? prefixItem;
   final value;
-  final dynamic items;
+  final List<String>? items;
   final TextAlign? textAlign;
   final Function(String) callbackFunction;
   final bool? isEnabled;
@@ -49,7 +50,7 @@ class _FormfieldState extends State<Formfield> {
 
     var type = widget.type;
     var hintText = widget.hintText;
-    //var items = widget.items;
+    var items = widget.items;
     //var value = widget.value;
     var textAlign = widget.textAlign;
     //var prefixItem = widget.prefixItem;
@@ -66,6 +67,29 @@ class _FormfieldState extends State<Formfield> {
         nameController: controller,
         isEnabled: isEnabled,
         isPassword: isPassword,
+      );
+    }
+
+    if (type == "TEL") {
+      fieldType = _formTextField(
+        Keytype: TextInputType.phone,
+        hintText: hintText,
+        textAlign: textAlign,
+        nameController: controller,
+        isEnabled: isEnabled,
+        isPassword: isPassword,
+      );
+    }
+
+    if (type == "SELECT") {
+      fieldType = DropdownWidget(
+        hintText: hintText,
+        items: items ?? [],
+        callbackResult: (value) {
+          setState(() {
+            widget.callbackFunction(value.toString());
+          });
+        },
       );
     }
 

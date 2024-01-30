@@ -5,6 +5,7 @@ class AppButton extends StatelessWidget {
   final double? height;
   final Color color;
   final Color fcolor;
+  final Color borderColor;
   final String label;
   final IconData? icon;
   final bool hasIcon;
@@ -19,7 +20,8 @@ class AppButton extends StatelessWidget {
       this.onPressed,
       this.icon,
       required this.fcolor,
-      required this.hasIcon});
+      required this.hasIcon,
+      required this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class AppButton extends StatelessWidget {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
-              side: BorderSide(color: color),
+              side: BorderSide(color: borderColor),
             ),
           ),
         ),

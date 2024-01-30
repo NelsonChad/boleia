@@ -29,6 +29,7 @@ class LoginPage extends StatelessWidget {
                   child: AppButton(
                     color: Colors.red,
                     fcolor: Colors.white,
+                    borderColor: Colors.red,
                     icon: Icons.facebook,
                     hasIcon: true,
                     label: "Entrar com o Google",
@@ -44,6 +45,7 @@ class LoginPage extends StatelessWidget {
                   child: AppButton(
                     color: Colors.blue,
                     fcolor: Colors.white,
+                    borderColor: Colors.blue,
                     icon: Icons.facebook,
                     hasIcon: true,
                     label: "Entrar com o Facebook",
@@ -83,6 +85,7 @@ class LoginPage extends StatelessWidget {
                   child: AppButton(
                     color: Colors.green,
                     fcolor: Colors.white,
+                    borderColor: Colors.green,
                     hasIcon: false,
                     label: "Login",
                     height: 60.0,

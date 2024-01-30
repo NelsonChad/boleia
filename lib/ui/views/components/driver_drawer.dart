@@ -1,5 +1,6 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/home/home_page.dart';
+import 'package:boleia_app/ui/views/start/start_page.dart';
 import 'package:flutter/material.dart';
 
 class DriverDrawer extends StatelessWidget {
@@ -23,7 +24,14 @@ class DriverDrawer extends StatelessWidget {
                   minRadius: 50,
                   maxRadius: 50,
                 ),
-                Text('Driver name'),
+                SizedBox(height: 10),
+                Text(
+                  'Driver name',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ),
@@ -44,6 +52,14 @@ class DriverDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               navegateReplaceTo(context, const HomePage());
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.exit_to_app_rounded),
+            title: const Text('Sair'),
+            onTap: () {
+              Navigator.pop(context);
+              navegateReplaceTo(context, const StartPage());
             },
           ),
         ],

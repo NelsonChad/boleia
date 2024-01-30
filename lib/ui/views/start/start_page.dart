@@ -25,23 +25,6 @@ class StartPage extends StatelessWidget {
               SizedBox(
                 width: 250,
                 child: AppButton(
-                  color: Colors.white,
-                  fcolor: Colors.grey,
-                  borderColor: Colors.grey,
-                  icon: Icons.drive_eta,
-                  hasIcon: true,
-                  label: "Entrar como Motorista",
-                  height: 60.0,
-                  width: double.infinity,
-                  onPressed: () {
-                    navegateReplaceTo(context, const HomeDriver());
-                  },
-                ),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 250,
-                child: AppButton(
                   borderColor: Colors.grey,
                   color: Colors.white,
                   fcolor: Colors.grey,
@@ -52,6 +35,23 @@ class StartPage extends StatelessWidget {
                   width: double.infinity,
                   onPressed: () {
                     navegateReplaceTo(context, const HomePage());
+                  },
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 250,
+                child: AppButton(
+                  color: Colors.white,
+                  fcolor: Colors.grey,
+                  borderColor: Colors.grey,
+                  icon: Icons.drive_eta,
+                  hasIcon: true,
+                  label: "Entrar como Motorista",
+                  height: 60.0,
+                  width: double.infinity,
+                  onPressed: () {
+                    navegateReplaceTo(context, const HomeDriver());
                   },
                 ),
               ),

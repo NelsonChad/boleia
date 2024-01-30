@@ -1,4 +1,5 @@
 import 'package:boleia_app/ui/views/components/app_drawer.dart';
+import 'package:boleia_app/ui/views/home/recent_content.dart';
 import 'package:boleia_app/ui/views/home/recent_section.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +12,15 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text(
-          "Home",
-          style: TextStyle(color: Colors.white),
+        title: const Row(
+          children: [
+            Text(
+              "Passageiro",
+              style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(width: 10),
+            Icon(Icons.card_travel, color: Colors.white),
+          ],
         ),
         leading: Builder(
           builder: (context) => // Ensure Scaffold is in context
@@ -26,28 +33,80 @@ class HomePage extends StatelessWidget {
         ),
       ),
       drawer: const AppDrawer(),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          SizedBox(
-            width: 250,
-            child: AppButton(
-              borderColor: Colors.grey,
-              color: Colors.white,
-              fcolor: Colors.grey,
-              icon: Icons.hail_rounded,
-              hasIcon: true,
-              label: "Pedir boleia         ",
-              height: 60.0,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 16),
               width: double.infinity,
-              onPressed: () {
-                //navegateReplaceTo(context, const HomePage());
-              },
+              child: const Text(
+                "Saldo disponivel",
+                style: TextStyle(fontSize: 12, color: Colors.grey),
+              ),
             ),
-          ),
-          const SizedBox(height: 30),
-          const RecentSection()
-        ],
+            Row(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(Icons.monetization_on, size: 30, color: Colors.blue),
+                    Text(
+                      "150TM",
+                      style: TextStyle(color: Colors.blue, fontSize: 30),
+                    ),
+                  ],
+                ),
+                const SizedBox(width: 10),
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        //color: Colors.amber,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: const Text(
+                      "Recarregar",
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 40),
+            SizedBox(
+              width: 250,
+              child: AppButton(
+                borderColor: Colors.blue,
+                color: Colors.blueAccent,
+                fcolor: Colors.white,
+                icon: Icons.hail_rounded,
+                hasIcon: true,
+                label: "Pedir boleia         ",
+                height: 60.0,
+                width: double.infinity,
+                onPressed: () {
+                  //navegateReplaceTo(context, const HomePage());
+                },
+              ),
+            ),
+            const SizedBox(height: 50),
+            const RecentSection(),
+            const SizedBox(height: 10),
+            const RecentContent(
+              name: "Nelson Chadali",
+              car: "Toyota Corrola, AAA 111 MC",
+              color: Colors.green,
+              status: "Terminada",
+            ),
+            const RecentContent(
+              name: "Nelson Aaaaaa",
+              car: "Toyota Auris, AAA 111 MC",
+              color: Colors.red,
+              status: "Cancelada",
+            ),
+          ],
+        ),
       ),
     );
   }

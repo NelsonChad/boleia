@@ -8,7 +8,17 @@ class HomeDriver extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Driver"),
+        backgroundColor: Colors.blue,
+        title: const Row(
+          children: [
+            Text(
+              "Motorista",
+              style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(width: 10),
+            Icon(Icons.drive_eta, color: Colors.white),
+          ],
+        ),
       ),
       drawer: const DriverDrawer(),
     );

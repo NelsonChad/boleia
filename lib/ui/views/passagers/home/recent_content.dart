@@ -25,6 +25,7 @@ class RecentContent extends StatelessWidget {
               backgroundColor: Colors.blue,
               minRadius: 20,
               maxRadius: 20,
+              backgroundImage: AssetImage("assets/driver.png"),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

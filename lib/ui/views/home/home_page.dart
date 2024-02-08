@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Icon(Icons.monetization_on, size: 30, color: Colors.blue),
                     Text(
-                      "150TM",
+                      "150MT",
                       style: TextStyle(color: Colors.blue, fontSize: 30),
                     ),
                   ],

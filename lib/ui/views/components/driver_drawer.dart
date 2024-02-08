@@ -1,6 +1,6 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/home/home_page.dart';
-import 'package:boleia_app/ui/views/start/start_page.dart';
+import 'package:boleia_app/ui/views/start/start_page_two.dart';
 import 'package:flutter/material.dart';
 
 class DriverDrawer extends StatelessWidget {

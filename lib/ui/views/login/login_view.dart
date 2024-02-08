@@ -1,6 +1,8 @@
+// This file is not being used, it should be deleted soon
+
 import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/passager_signup/signup_page.dart';
-import 'package:boleia_app/ui/views/start/start_page.dart';
+import 'package:boleia_app/ui/views/start/start_page_two.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:boleia_app/ui/widgets/formfield.dart';
 import 'package:flutter/material.dart';

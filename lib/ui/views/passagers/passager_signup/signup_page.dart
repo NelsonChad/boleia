@@ -1,7 +1,7 @@
 // This file is not being used, it should be deleted soon
 
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/home/home_page.dart';
+import 'package:boleia_app/ui/views/passagers/home/home_page.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:boleia_app/ui/widgets/formfield.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,8 @@
 import 'package:boleia_app/ui/views/components/app_drawer.dart';
-import 'package:boleia_app/ui/views/home/recent_content.dart';
-import 'package:boleia_app/ui/views/home/recent_section.dart';
+import 'package:boleia_app/ui/views/halpers/functions.dart';
+import 'package:boleia_app/ui/views/passagers/driver_list/drivers_list.dart';
+import 'package:boleia_app/ui/views/passagers/home/recent_content.dart';
+import 'package:boleia_app/ui/views/passagers/home/recent_section.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +88,7 @@ class HomePage extends StatelessWidget {
                 height: 60.0,
                 width: double.infinity,
                 onPressed: () {
-                  //navegateReplaceTo(context, const HomePage());
+                  navegateTo(context, const DriversList());
                 },
               ),
             ),

@@ -1,7 +1,7 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/home/home_page.dart';
 import 'package:boleia_app/ui/views/home_driver/home_driver.dart';
-import 'package:boleia_app/ui/views/login/login_two.dart';
+import 'package:boleia_app/ui/views/login/login_view_two.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 

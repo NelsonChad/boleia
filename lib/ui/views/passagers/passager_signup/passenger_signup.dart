@@ -1,4 +1,4 @@
-import 'package:boleia_app/ui/views/login/login_two.dart';
+import 'package:boleia_app/ui/views/login/login_view.dart';
 import 'package:boleia_app/ui/widgets/login_text_field.dart';
 import 'package:boleia_app/ui/widgets/square_tile.dart';
 import 'package:flutter/material.dart';

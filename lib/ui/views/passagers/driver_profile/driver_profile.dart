@@ -1,5 +1,7 @@
+import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/passagers/driver_profile/car_registration.dart';
 import 'package:boleia_app/ui/views/passagers/driver_profile/text_item.dart';
+import 'package:boleia_app/ui/views/passagers/travel/travel.dart';
 import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -112,6 +114,7 @@ class _DriverProfileState extends State<DriverProfile> {
                   width: double.infinity,
                   onPressed: () {
                     //navegateReplaceTo(context, const DriversList());
+                    showAlertDialog(context);
                   },
                 ),
               ],
@@ -119,6 +122,41 @@ class _DriverProfileState extends State<DriverProfile> {
           )
         ],
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: const Text("Fechar"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+    Widget continueButton = TextButton(
+      child: const Text("Ver"),
+      onPressed: () {
+        Navigator.of(context).pop();
+        navegateTo(context, const TravelView());
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: const Text("Informação!"),
+      content: Text("O Motirista Carlos Manuel acaba de aceitar o seu pedido."),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

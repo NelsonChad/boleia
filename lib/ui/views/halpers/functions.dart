@@ -17,3 +17,15 @@ navegateReplaceTo(context, Widget page) {
     ),
   );
 }
+
+showSnackBar(BuildContext context, String message, IconData icon, Color color) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Row(
+      children: [
+        Icon(icon, color: color),
+        const Padding(padding: EdgeInsets.only(left: 8)),
+        Text(message),
+      ],
+    ),
+  ));
+}

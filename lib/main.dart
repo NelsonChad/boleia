@@ -1,4 +1,5 @@
 import 'package:boleia_app/ui/views/login/login_view.dart';
+import 'package:boleia_app/ui/views/passagers/travel/travel.dart';
 import 'package:flutter/material.dart';
 
 void main() {

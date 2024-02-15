@@ -25,13 +25,13 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 40),
                 // logo
                 const Icon(
                   Icons.car_crash_rounded,
                   size: 100,
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 // welcome back, you've been missed
                 Text(
                   'Bem vindo de volta, sentimos sua falta',
@@ -79,7 +79,7 @@ class LoginPage extends StatelessWidget {
                   text: 'Iniciar sessão',
                 ),
 
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
 
                 // or continue with
                 Row(
@@ -102,7 +102,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -111,7 +111,7 @@ class LoginPage extends StatelessWidget {
                     SquareTile(imagePath: 'assets/facebook.png')
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

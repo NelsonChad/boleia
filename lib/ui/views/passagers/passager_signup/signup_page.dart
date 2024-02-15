@@ -71,7 +71,7 @@ class RegisterPage extends StatelessWidget {
                   text: 'Criar conta',
                 ),
 
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
 
                 // or continue with
                 Row(
@@ -94,7 +94,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -103,7 +103,7 @@ class RegisterPage extends StatelessWidget {
                     SquareTile(imagePath: 'assets/facebook.png')
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

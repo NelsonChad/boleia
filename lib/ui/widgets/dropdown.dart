@@ -25,7 +25,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
       child: DropdownButton2<String>(
         isExpanded: true,
         hint: Text(
-          'Select Item',
+          widget.hintText,
           style: TextStyle(
             fontSize: 14,
             color: Theme.of(context).hintColor,
@@ -58,7 +58,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
             ),
             color: Colors.grey[300],
           ),
-          elevation: 2,
+          elevation: 0,
         ),
         menuItemStyleData: const MenuItemStyleData(
           height: 40,

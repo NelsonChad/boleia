@@ -29,36 +29,26 @@ showFinishActionSheetModal(
                   const SizedBox(height: 10),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         "Viagem Terminada!",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 15),
-                      Text(
+                      const SizedBox(height: 15),
+                      const Text(
                         "Esperamos que tenha tido uma boa viagem",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                       const SizedBox(height: 20),
-                      SizedBox(
-                        width: 200,
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Icon(Icons.monetization_on,
-                                size: 50, color: Colors.black),
-                            Text(
-                              "50MT",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 58, 52, 52),
-                                fontSize: 50,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+                      const Text(
+                        "50MT",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 58, 52, 52),
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Como avalia a viagem?",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),

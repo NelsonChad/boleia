@@ -1,21 +1,15 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/passagers/driver_list/drivers_list.dart';
 import 'package:boleia_app/ui/views/passagers/driver_profile/driver_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Driver extends StatelessWidget {
   final String status;
-  final Color color;
   final String name;
   final String car;
 
   const Driver(
-      {super.key,
-      required this.status,
-      required this.color,
-      required this.name,
-      required this.car});
+      {super.key, required this.status, required this.name, required this.car});
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +48,14 @@ class Driver extends StatelessWidget {
                             const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Text(
-                        "Partida: 16:30",
+                        "500 corridas",
                         style:
                             const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Row(
                         children: [
                           Icon(Icons.airline_seat_recline_extra_sharp,
-                              size: 20, color: Colors.blue),
+                              size: 20, color: Colors.black),
                           Text(
                             "4 Lugares",
                             style: const TextStyle(
@@ -76,11 +70,11 @@ class Driver extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                          color: color,
+                          color: Colors.black,
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Text(
-                          status,
+                          "~ 30min",
                           style: const TextStyle(
                               fontSize: 12, color: Colors.white),
                         ),
@@ -89,10 +83,10 @@ class Driver extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Icon(Icons.monetization_on,
-                              size: 20, color: Colors.blue),
+                              size: 20, color: Colors.black),
                           Text(
-                            "50TM",
-                            style: TextStyle(color: Colors.blue, fontSize: 20),
+                            "50MT",
+                            style: TextStyle(color: Colors.black, fontSize: 20),
                           ),
                         ],
                       ),
@@ -106,7 +100,7 @@ class Driver extends StatelessWidget {
                         itemPadding:
                             const EdgeInsets.symmetric(horizontal: 4.0),
                         itemBuilder: (context, _) =>
-                            const Icon(Icons.star, color: Colors.amber),
+                            const Icon(Icons.star, color: Colors.black),
                         onRatingUpdate: (rating) {
                           print(rating);
                         },

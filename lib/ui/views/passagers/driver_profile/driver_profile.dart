@@ -1,8 +1,7 @@
+import 'package:boleia_app/ui/views/components/action_sheet_widget.dart';
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/passagers/driver_profile/car_registration.dart';
 import 'package:boleia_app/ui/views/passagers/driver_profile/text_item.dart';
-import 'package:boleia_app/ui/views/passagers/travel/travel.dart';
-import 'package:boleia_app/ui/widgets/button.dart';
+import 'package:boleia_app/ui/widgets/button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -65,14 +64,14 @@ class _DriverProfileState extends State<DriverProfile> {
                       itemSize: 25,
                       itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
                       itemBuilder: (context, _) =>
-                          const Icon(Icons.star, color: Colors.amber),
+                          const Icon(Icons.star, color: Colors.black),
                       onRatingUpdate: (rating) {
                         print(rating);
                       },
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -83,38 +82,32 @@ class _DriverProfileState extends State<DriverProfile> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(Icons.monetization_on,
-                                size: 30, color: Colors.blue),
+                                size: 30, color: Colors.black),
                             Text(
-                              "50TM",
+                              "50MT",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 30),
+                                  TextStyle(color: Colors.black, fontSize: 30),
                             ),
                           ],
                         ),
-                        CarRegistration(resgitration: "AAA 555 MC")
+                        //CarRegistration(resgitration: "AAA 555 MC")
                       ],
                     ),
                   ],
                 ),
                 TextItem(label: "Viatura", value: "Toyota Racts"),
                 TextItem(label: "Lugares", value: "4 Lugares"),
-                TextItem(label: "Hora de Partida", value: "16:30"),
-                TextItem(label: "Hora de Chegada", value: "17:30"),
+                TextItem(label: "Hora de Partida", value: "~ 30min"),
                 TextItem(label: "A/C", value: "Disponivel"),
                 TextItem(label: "Restricoes", value: "Nenhuma"),
-                SizedBox(height: 30),
-                AppButton(
-                  borderColor: Colors.blue,
-                  color: Colors.blueAccent,
-                  fcolor: Colors.white,
-                  icon: Icons.hail_rounded,
-                  hasIcon: true,
-                  label: "Pedir boleia         ",
-                  height: 60.0,
-                  width: double.infinity,
-                  onPressed: () {
-                    //navegateReplaceTo(context, const DriversList());
-                    showAlertDialog(context);
+                SizedBox(height: 60),
+                AppButton2(
+                  text: "Pedir boleia",
+                  onTap: () {
+                    showDetainsActionSheetModal(context, action: () {});
+                    Future.delayed(const Duration(seconds: 5)).then((val) {
+                      showAlertDialog(context);
+                    });
                   },
                 ),
               ],
@@ -122,41 +115,6 @@ class _DriverProfileState extends State<DriverProfile> {
           )
         ],
       ),
-    );
-  }
-
-  showAlertDialog(BuildContext context) {
-    // set up the buttons
-    Widget cancelButton = TextButton(
-      child: const Text("Fechar"),
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
-    );
-    Widget continueButton = TextButton(
-      child: const Text("Ver"),
-      onPressed: () {
-        Navigator.of(context).pop();
-        navegateTo(context, const TravelView());
-      },
-    );
-
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: const Text("Informação!"),
-      content: Text("O Motirista Carlos Manuel acaba de aceitar o seu pedido."),
-      actions: [
-        cancelButton,
-        continueButton,
-      ],
-    );
-
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
     );
   }
 }

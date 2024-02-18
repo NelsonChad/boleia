@@ -1,3 +1,4 @@
+import 'package:boleia_app/ui/views/passagers/travel/travel.dart';
 import 'package:flutter/material.dart';
 
 navegateTo(context, Widget page) {
@@ -28,4 +29,31 @@ showSnackBar(BuildContext context, String message, IconData icon, Color color) {
       ],
     ),
   ));
+}
+
+showAlertDialog(BuildContext context) {
+  Widget continueButton = TextButton(
+    child: const Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+      navegateTo(context, const TravelView());
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: const Text("Informação!"),
+    content: Text("O Motirista Carlos Manuel acaba de aceitar o seu pedido."),
+    actions: [
+      continueButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

@@ -12,7 +12,7 @@ class TextItem extends StatelessWidget {
         Text(
           label,
           style: const TextStyle(
-              color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 10),
         Text(

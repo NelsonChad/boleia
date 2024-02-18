@@ -13,10 +13,11 @@ class _DriversListState extends State<DriversList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lista de Motoristas"),
+        title: const Text("Motoristas Disponiveis"),
       ),
       body: ListView(
         children: [
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.only(left: 10.0, right: 10, bottom: 20),
             child: Container(
@@ -28,19 +29,16 @@ class _DriversListState extends State<DriversList> {
           ),
           Driver(
             car: "Mazda Demio",
-            color: Colors.blue,
             name: "Carlos Manuel",
             status: "Disponivel",
           ),
           Driver(
             car: "Toyota Demio",
-            color: Colors.blue,
             name: "Manuel Alvaro",
             status: "Disponivel",
           ),
           Driver(
             car: "Toyota Vitz",
-            color: Colors.blue,
             name: "Isaias Manuel",
             status: "Disponivel",
           )

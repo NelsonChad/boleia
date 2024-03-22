@@ -3,7 +3,7 @@ import 'package:boleia_app/ui/widgets/square_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:boleia_app/ui/widgets/login_text_field.dart';
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/start/start_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:boleia_app/ui/views/passagers/passager_signup/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,6 +13,13 @@ class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
+
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +81,8 @@ class LoginPage extends StatelessWidget {
                 // sign in button
                 LoginButton(
                   onTap: () {
-                    navegateReplaceTo(context, const StartPage());
+                    // navegateReplaceTo(context, const StartPage());
+                    signUserIn;
                   },
                   text: 'Iniciar sessão',
                 ),

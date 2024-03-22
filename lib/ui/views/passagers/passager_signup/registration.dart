@@ -1,10 +1,6 @@
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/passagers/home/home_page.dart';
-import 'package:boleia_app/ui/views/drivers/home_driver/home_driver.dart';
-import 'package:boleia_app/ui/views/login/login_view.dart';
-import 'package:boleia_app/ui/views/passagers/passager_signup/signup_page.dart';
-import 'package:boleia_app/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PassengerRegistrationPage extends StatelessWidget {
   const PassengerRegistrationPage({super.key});
@@ -21,7 +17,7 @@ class PassengerRegistrationPage extends StatelessWidget {
           actions: [
             GestureDetector(
                 onTap: () {
-                  navegateReplaceTo(context, LoginPage());
+                  FirebaseAuth.instance.signOut();
                 },
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15),

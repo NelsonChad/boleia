@@ -77,7 +77,7 @@ class StartPage extends StatelessWidget {
                   height: 60.0,
                   width: double.infinity,
                   onPressed: () {
-                    navegateReplaceTo(context, const HomeDriver());
+                    navegateReplaceTo(context, HomeDriver());
                   },
                 ),
               ),

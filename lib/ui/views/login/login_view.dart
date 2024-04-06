@@ -6,18 +6,51 @@ import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:boleia_app/ui/views/passagers/passager_signup/signup_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
 
   void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      presentError(e.message!);
+    }
+  }
+
+  void presentError(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            message,
+            style: const TextStyle(color: Colors.black),
+          ),
+        );
+      },
     );
   }
 
@@ -80,10 +113,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 25),
                 // sign in button
                 LoginButton(
-                  onTap: () {
-                    // navegateReplaceTo(context, const StartPage());
-                    signUserIn;
-                  },
+                  onTap: signUserIn,
                   text: 'Iniciar sessão',
                 ),
 

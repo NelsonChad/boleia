@@ -1,13 +1,17 @@
 import 'package:boleia_app/ui/views/components/app_drawer.dart';
 import 'package:boleia_app/ui/views/drivers/home_driver/home_driver.dart';
 import 'package:boleia_app/ui/views/halpers/functions.dart';
-import 'package:boleia_app/ui/views/login/login_view.dart';
 import 'package:boleia_app/ui/views/passagers/driver_list/drivers_list.dart';
 import 'package:boleia_app/ui/views/passagers/home/menu_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
+  void signUserOut() async {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +21,24 @@ class HomePage extends StatelessWidget {
         leading: Builder(
           builder: (context) => // Ensure Scaffold is in context
               IconButton(
-                  icon: const Icon(
-                    Icons.exit_to_app,
-                    color: Colors.white,
-                  ),
-                  onPressed: () => navegateTo(context, LoginPage())),
+            icon: const Icon(
+              Icons.exit_to_app,
+              color: Colors.white,
+            ),
+            onPressed: () => signUserOut,
+          ),
         ),
         actions: [
           GestureDetector(
             onTap: () {
-              navegateReplaceTo(context, const HomeDriver());
+              navegateReplaceTo(context, HomeDriver());
             },
             child: Container(
               margin: const EdgeInsets.only(right: 10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Row(
@@ -46,9 +55,6 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
             ),
           )
         ],
@@ -61,12 +67,12 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 150),
-            Text(
+            const Text(
               "Hi, Nelson Chadali",
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Text(
+            const Text(
               "Where do you want to go?",
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),

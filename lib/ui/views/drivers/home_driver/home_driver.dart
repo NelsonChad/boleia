@@ -4,10 +4,17 @@ import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/views/login/login_view.dart';
 import 'package:boleia_app/ui/views/passagers/home/home_page.dart';
 import 'package:boleia_app/ui/views/passagers/home/menu_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeDriver extends StatelessWidget {
-  const HomeDriver({super.key});
+  HomeDriver({super.key});
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signUserOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +52,7 @@ class HomeDriver extends StatelessWidget {
         ],
         leading: GestureDetector(
           onTap: () {
+            signUserOut();
             navegateReplaceTo(context, LoginPage());
           },
           child: const Icon(Icons.exit_to_app, color: Colors.white),
@@ -59,12 +67,12 @@ class HomeDriver extends StatelessWidget {
           children: [
             const SizedBox(height: 150),
             Text(
-              "Hi, Nelson Chadali",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              "Hi, ${user.email!}",
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Text(
-              "Where do you want to go?",
+            const Text(
+              "Para onde é que deseja viajar?",
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: MediaQuery.of(context).size.height - 550),

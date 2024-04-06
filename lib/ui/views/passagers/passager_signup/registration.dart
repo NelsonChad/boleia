@@ -1,4 +1,3 @@
-import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

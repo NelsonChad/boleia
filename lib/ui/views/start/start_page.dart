@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
 
-  void signUserOut() {
-    FirebaseAuth.instance.signOut();
+  void signUserOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 
   @override
@@ -37,52 +37,54 @@ class StartPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // const SizedBox(height: 100),
-              const CircleAvatar(
-                foregroundImage: AssetImage("assets/logo.png"),
-                minRadius: 65,
-                maxRadius: 90,
-              ),
-              const SizedBox(height: 150),
-              SizedBox(
-                width: 250,
-                child: AppButton(
-                  borderColor: Colors.grey,
-                  color: Colors.white,
-                  fcolor: Colors.grey,
-                  icon: Icons.hail_rounded,
-                  hasIcon: true,
-                  label: "Entrar como Passageiro",
-                  height: 60.0,
-                  width: double.infinity,
-                  onPressed: () {
-                    navegateReplaceTo(
-                        context, const PassengerRegistrationPage());
-                  },
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // const SizedBox(height: 100),
+                const CircleAvatar(
+                  foregroundImage: AssetImage("assets/logo.png"),
+                  minRadius: 65,
+                  maxRadius: 90,
                 ),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 250,
-                child: AppButton(
-                  color: Colors.white,
-                  fcolor: Colors.grey,
-                  borderColor: Colors.grey,
-                  icon: Icons.drive_eta,
-                  hasIcon: true,
-                  label: "Entrar como Motorista",
-                  height: 60.0,
-                  width: double.infinity,
-                  onPressed: () {
-                    navegateReplaceTo(context, const HomeDriver());
-                  },
+                const SizedBox(height: 150),
+                SizedBox(
+                  width: 250,
+                  child: AppButton(
+                    borderColor: Colors.grey,
+                    color: Colors.white,
+                    fcolor: Colors.grey,
+                    icon: Icons.hail_rounded,
+                    hasIcon: true,
+                    label: "Entrar como Passageiro",
+                    height: 60.0,
+                    width: double.infinity,
+                    onPressed: () {
+                      navegateReplaceTo(
+                          context, const PassengerRegistrationPage());
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-            ],
+                const SizedBox(height: 20),
+                SizedBox(
+                  width: 250,
+                  child: AppButton(
+                    color: Colors.white,
+                    fcolor: Colors.grey,
+                    borderColor: Colors.grey,
+                    icon: Icons.drive_eta,
+                    hasIcon: true,
+                    label: "Entrar como Motorista",
+                    height: 60.0,
+                    width: double.infinity,
+                    onPressed: () {
+                      navegateReplaceTo(context, HomeDriver());
+                    },
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),

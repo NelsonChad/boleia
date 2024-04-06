@@ -51,7 +51,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Mudar para Motorista'),
             onTap: () {
               Navigator.pop(context);
-              navegateReplaceTo(context, const HomeDriver());
+              navegateReplaceTo(context, HomeDriver());
             },
           ),
           ListTile(

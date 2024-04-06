@@ -44,37 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCpOEq83wRB02oKsP8MQUwHHQO_4JebWzE',
-    appId: '1:97806127182:web:c159ea873a69e29bb0f31f',
-    messagingSenderId: '97806127182',
-    projectId: 'authtutorial-e501e',
-    authDomain: 'authtutorial-e501e.firebaseapp.com',
-    storageBucket: 'authtutorial-e501e.appspot.com',
+    apiKey: 'AIzaSyCICI41YWTpzfdDIRTf4KIFdmH0FT1c_ew',
+    appId: '1:867586225245:web:072d88fedd7f6de5c689b4',
+    messagingSenderId: '867586225245',
+    projectId: 'boleia-app-3a8f9',
+    authDomain: 'boleia-app-3a8f9.firebaseapp.com',
+    storageBucket: 'boleia-app-3a8f9.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD3VIR-M0lhj3Bm_NfECSBYRuQ8TTAmVXc',
-    appId: '1:97806127182:android:97eafee5ce881db0b0f31f',
-    messagingSenderId: '97806127182',
-    projectId: 'authtutorial-e501e',
-    storageBucket: 'authtutorial-e501e.appspot.com',
+    apiKey: 'AIzaSyAqarJ4PseB1UXi5csax0cOXpWEnzeyr7o',
+    appId: '1:867586225245:android:3f3c239e109ebd8dc689b4',
+    messagingSenderId: '867586225245',
+    projectId: 'boleia-app-3a8f9',
+    storageBucket: 'boleia-app-3a8f9.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBKVKYwRCeBYllshKa2X3CGxJP8pMw8Wbw',
-    appId: '1:97806127182:ios:740af6032bbe1f57b0f31f',
-    messagingSenderId: '97806127182',
-    projectId: 'authtutorial-e501e',
-    storageBucket: 'authtutorial-e501e.appspot.com',
+    apiKey: 'AIzaSyB6SKl3aGqtzq2m6W9pQukk4TIccB-hGhQ',
+    appId: '1:867586225245:ios:417ba8386add0bcac689b4',
+    messagingSenderId: '867586225245',
+    projectId: 'boleia-app-3a8f9',
+    storageBucket: 'boleia-app-3a8f9.appspot.com',
     iosBundleId: 'com.example.boleiaApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBKVKYwRCeBYllshKa2X3CGxJP8pMw8Wbw',
-    appId: '1:97806127182:ios:d999950076fc8934b0f31f',
-    messagingSenderId: '97806127182',
-    projectId: 'authtutorial-e501e',
-    storageBucket: 'authtutorial-e501e.appspot.com',
+    apiKey: 'AIzaSyB6SKl3aGqtzq2m6W9pQukk4TIccB-hGhQ',
+    appId: '1:867586225245:ios:f8efacabb413e3e4c689b4',
+    messagingSenderId: '867586225245',
+    projectId: 'boleia-app-3a8f9',
+    storageBucket: 'boleia-app-3a8f9.appspot.com',
     iosBundleId: 'com.example.boleiaApp.RunnerTests',
   );
 }

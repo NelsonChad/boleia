@@ -1,4 +1,6 @@
+import 'package:boleia_app/ui/views/drivers/open_ride/open_ride_view.dart';
 import 'package:boleia_app/ui/views/drivers/share_trip/time_widget.dart';
+import 'package:boleia_app/ui/views/halpers/functions.dart';
 import 'package:boleia_app/ui/widgets/button2.dart';
 import 'package:boleia_app/ui/widgets/formfield.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ class ShareTrip extends StatefulWidget {
 class _ShareTripState extends State<ShareTrip> {
   TimeOfDay selectedTime = TimeOfDay.now();
 
+  int qtd = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +75,9 @@ class _ShareTripState extends State<ShareTrip> {
               SizedBox(
                 width: 120,
                 child: Formfield(
-                    callbackFunction: (p0) {},
+                    callbackFunction: (p0) {
+                      //qtd = p0;
+                    },
                     hintText: "Lugares",
                     items: ["1", "2", "3", "4", "5", "6"],
                     nameController: TextEditingController(),
@@ -93,7 +98,16 @@ class _ShareTripState extends State<ShareTrip> {
                     type: "TEXT"),
               ),
               const SizedBox(height: 50),
-              AppButton2(onTap: () {}, text: "Abrir Corrida")
+              AppButton2(
+                  onTap: () {
+                    navegateReplaceTo(
+                      context,
+                      const OpenRideView(
+                        sitQtd: 5,
+                      ),
+                    );
+                  },
+                  text: "Abrir Corrida")
             ],
           ),
         ),
